@@ -461,10 +461,15 @@ public class PhysicicsDevice extends NonBowlerDevice{
 			rVect[2]=intermediate.getZ();	
 			*/
 			//Cross product of rVect and Z vect
+<<<<<<< HEAD
 			double []xProd = crossProduct( zVect,rVect);
 			println i+" R vector "+rVect //+" \t\t Zvect "+zVect+" \t\tcrossProd "+xProd
 			//println TransformNR.getMatrixString(tipOffsetmx)
 			
+=======
+			double []xProd = chain.crossProduct(rVect, zVect);
+			println i+" R vector "+rVect+" "+TransformNR.getMatrixString(new Matrix(rotation))
+>>>>>>> 1138678c8c1addf225847805d4aa5804124b2360
 			
 			data[0][i]=xProd[0];
 			data[1][i]=xProd[1];
@@ -502,10 +507,10 @@ public class PhysicicsDevice extends NonBowlerDevice{
 				
 				for (int i=0;i<jointSpaceVector.length;i++){
 					incrementalJacobian[i] = getJacobian(chain,jointSpaceVector,i);
-					
 					println "Increment "+i+" "+  TransformNR.getMatrixString(incrementalJacobian[i])
+					
 				}
-				println "Total "+  TransformNR.getMatrixString(jacobian)
+				//println "Total "+  TransformNR.getMatrixString(jacobian)
 								
 			}
 		}
